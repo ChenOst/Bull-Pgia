@@ -1,24 +1,14 @@
-// #include <iostream>
-// #include <string>
-// #include "Guesser.hpp"
-// using namespace std;
-// using std::string;
-// using namespace bullpgia;
+#include <iostream>
+#include <string>
+#include "Guesser.hpp"
+using std::string;
+using namespace bullpgia;
 
-// Guesser::Guesser(){
-  
-// }
-
-// string Guesser::guess()
-// {
-//     return "1234";
-// }
-//   void Guesser::startNewGame(uint length)
-//  {
-//    cout<<length<<endl;
-//  }
-//   void Guesser::learn(string reply)
-//  {
-//    cout<<reply<<endl;
-
-//  }
+string Guesser::guess(){
+    int number = 0;
+    cout << "Please enter your guess: ";
+    cin >> number;
+    string res = std::to_string(number);
+    this->length = res.length();
+    return res;
+}

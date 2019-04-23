@@ -10,6 +10,5 @@ namespace bullpgia{
         public:
             uint length;
             virtual string choose(uint length)=0;
-            
     };
 };
