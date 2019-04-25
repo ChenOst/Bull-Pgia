@@ -9,17 +9,28 @@ namespace bullpgia{
     string calculateBullAndPgia(string choice, string guess){
         int bull = 0;
         int pgia = 0;
-        for(int i=0; i<choice.length(); i++){
-            for(int j=0; j<guess.length(); j++){
-                if(choice[i]==guess[j] && i==j){
+        string choiceCopy = choice;
+        string guessCopy = guess;
+        //calculate the bull first
+        for(int i=0; i<choiceCopy.length(); i++){
+            for(int j=0; j<guessCopy.length(); j++){
+                if(choiceCopy[i]==guessCopy[j] && i==j){
                     bull++;
-                }
-                else if(choice[i]==guess[j] && i!=j){
-                    pgia++;
+                    choiceCopy[i]='X';
+                    guessCopy[j]='X';
+                    i++;
                 }
             }
         }
-        
+        //calculate the pgia second
+        for(int i=0; i<choiceCopy.length(); i++){
+            for(int j=0; j<guessCopy.length(); j++){
+                if(choiceCopy[i]==guessCopy[j] && i!=j && ((choiceCopy[i]!='X')&&(guessCopy[j]!='X'))){
+                    pgia++;
+                    guessCopy[j]='X';
+                }
+            }
+        } 
         string res = std::to_string(bull) + "," + std::to_string(pgia);
         return res;
     }

@@ -51,7 +51,7 @@ int main() {
 		.CHECK_OUTPUT(calculateBullAndPgia("123456789","987654321"), "1,8")      // 1 bull, 8 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("123456798","123456789"), "7,2")      // 7 bull, 2 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1","1"), "1,0")      // 1 bull, 0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("4862","4286"), "2,2")      // 2 bull, 2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("4862","4286"), "1,3")      // 1 bull, 3 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","6789"), "0,0")      // 0 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","12345"), "4,0")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("741","126"), "0,1")      // 0 bull, 1 pgia
@@ -69,7 +69,7 @@ int main() {
 
 		//My Test
 		testcase.setname("my test - Play with dummy choosers and guessers")
-		.CHECK_EQUAL(play(c456, g654, 3, 5), 2)   
+		.CHECK_EQUAL(play(c456, g654, 3, 40), 2)   
 		.CHECK_EQUAL(play(c01, g10, 2, 1000), 2)     
 		.CHECK_EQUAL(play(c7657657, g7657657, 7, 1), 1)     
 		.CHECK_EQUAL(play(c7657657,  g7657765, 7, 100), 70)    
