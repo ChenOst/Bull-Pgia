@@ -27,6 +27,7 @@ namespace bullpgia{
             for(int j=0; j<guessCopy.length(); j++){
                 if(choiceCopy[i]==guessCopy[j] && i!=j && ((choiceCopy[i]!='X')&&(guessCopy[j]!='X'))){
                     pgia++;
+                    choiceCopy[i]='X';
                     guessCopy[j]='X';
                 }
             }
